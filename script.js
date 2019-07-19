@@ -51,14 +51,11 @@ document.querySelector("#calculate").addEventListener("click", function(){
         var detailRate = document.querySelector("#detailRate");
         var detailTenure = document.querySelector("#detailTenure");
         var detailInstallment = document.querySelector("#detailInstallment");
-        detailAmount.innerText = loan_value;
+        detailAmount.innerText = currencyFormat(loan_value);
         detailRate.innerText = interest_value * 100 + "%";
         detailTenure.innerText = term_value +(term_value == 1 ? " year" : " years");
-        detailInstallment.innerText = "$ " +monthly_payment.toFixed(2);
-        // output.innerHTML = "Your principal amount: $" +loan_value +"<br>"
-        //                 +"Your interest rate: " +interest_value*100 +"%" +"<br>"
-        //                 +"Your tenure: " +term_value +" years" +"<br>"
-        //                 +"Your monthly installment: $" +monthly_payment.toFixed(2);
+        detailInstallment.innerText = currencyFormat(monthly_payment);
+        
         //resetting the input boxes
         document.querySelector("#myForm").reset();
 
@@ -76,27 +73,31 @@ document.querySelector("#calculate").addEventListener("click", function(){
         var sch_end_amount=sch_beg_amount;
         var sch_principal;
         var sch_interest;
-        //console.log("Monthly term: " +monthly_term);
         for(var i = 0; i < monthly_term; ++i){
             //calculations of the loan repayment schedule
             sch_interest = sch_beg_amount * monthly_interest;
             sch_principal = monthly_payment - sch_interest;
-            sch_end_amount -= sch_principal;
+            if(i == monthly_term - 1){
+                sch_end_amount = 0
+            } 
+            else{
+                sch_end_amount -= sch_principal;
+            }
 
             var data_row = document.createElement('tr');
             repayment_schedule.appendChild(data_row);
             var data_serial = document.createElement('td');
             data_serial.innerText = i+1;
             var data_begining = document.createElement('td');
-            data_begining.innerText = sch_beg_amount.toFixed(2);
+            data_begining.innerText = currencyFormat(sch_beg_amount);
             var data_installment = document.createElement('td');
-            data_installment.innerText = monthly_payment.toFixed(2);
+            data_installment.innerText = currencyFormat(monthly_payment);
             var data_interest = document.createElement('td');
-            data_interest.innerText = sch_interest.toFixed(2);
+            data_interest.innerText = currencyFormat(sch_interest);
             var data_principal = document.createElement('td');
-            data_principal.innerText = sch_principal.toFixed(2);
+            data_principal.innerText = currencyFormat(sch_principal);
             var data_ending = document.createElement('td');
-            data_ending.innerText = sch_end_amount.toFixed(2);
+            data_ending.innerText = currencyFormat(sch_end_amount);
             
             data_row.appendChild(data_serial);
             data_row.appendChild(data_begining);
@@ -113,3 +114,7 @@ document.querySelector("#calculate").addEventListener("click", function(){
 document.querySelector("#refresh").addEventListener('click', function(){
     location.reload();
 }, false);
+
+function currencyFormat(num){
+    return '$' +num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g,'$1,');
+}
