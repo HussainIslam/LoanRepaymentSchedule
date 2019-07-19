@@ -1,4 +1,5 @@
 document.querySelector("#calculate").addEventListener("click", function(){
+    
     //getting the elements
     var loan_amount = document.querySelector("#loan_amount");
     var interest_rate = document.querySelector("#interest_rate");
@@ -56,6 +57,10 @@ document.querySelector("#calculate").addEventListener("click", function(){
 
         //creating and appending table headers
         var repayment_schedule = document.querySelector("#repayment_schedule");
+        while(repayment_schedule.firstChild){
+            repayment_schedule.removeChild(repayment_schedule.firstChild);
+        }
+        
         var payment_table = document.querySelector("#payment_table");
         payment_table.style.display = 'block';
         
