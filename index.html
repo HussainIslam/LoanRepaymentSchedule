@@ -52,11 +52,15 @@
             <label for="loan_term">Loan Term</label><br>
           </div>
           <div class="col-md-2">
-            <input type="text" id="loan_term" placeholder="Duration (in years)">
+            <input type="text" class="form-control" id="loan_term" placeholder="Duration (in years)">
           </div>
         </div>
-        <input type="button" value="Calculate" id="calculate">
-        <input type="button" value="Clear" id="refresh">
+        <div class="row">
+          <div class="col-md-2">
+            <input type="button" class="btn btn-primary" value="Calculate" id="calculate">
+            <input type="button" class="btn btn-danger" value="Clear" id="refresh">
+          </div>
+        </div>
         <p id="output"></p>
         <h1 id="loan_repayment"></h1>
         <table id="repayment_schedule"></table>
