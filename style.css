@@ -3,10 +3,9 @@
     border-collapse: collapse;
 }
 
-/* table, th, td {
-    border: 1px solid black;
+table, th, td {
     text-align: center;
-} */
+}
 
 .btn{
     width: 100px;
