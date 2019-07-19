@@ -4,8 +4,6 @@ document.querySelector("#calculate").addEventListener("click", function(){
     var interest_rate = document.querySelector("#interest_rate");
     var loan_term = document.querySelector("#loan_term");
     var radio = document.getElementsByName("compounding");
-    var header = document.querySelector("#loan_repayment");
-    header.innerText = "Loan Repayment Schedule"
     //getting the values from the elements
     var loan_value = parseFloat(loan_amount.value);
     var interest_value = parseFloat(interest_rate.value)/100;
@@ -59,30 +57,8 @@ document.querySelector("#calculate").addEventListener("click", function(){
         //creating and appending table headers
         var repayment_schedule = document.querySelector("#repayment_schedule");
         var payment_table = document.querySelector("#payment_table");
-        payment_table.style.display = 'table';
-        /*
-        repayment_schedule.width = "100%";
-        var header_row = document.createElement("tr");
-        repayment_schedule.appendChild(header_row);
-        var serial = document.createElement("th");
-        serial.innerText = "Serial";
-        var begining_balance = document.createElement("th");
-        begining_balance.innerText = "Begining Balance";
-        var installment = document.createElement("th");
-        installment.innerText = "Installment";
-        var interest = document.createElement('th');
-        interest.innerText = "Interest Amount";
-        var principal = document.createElement('th');
-        principal.innerText = "Principal Amount";
-        var closing_balance = document.createElement("th");
-        closing_balance.innerText = "Closing Balance";
-        header_row.appendChild(serial);
-        header_row.appendChild(begining_balance);
-        header_row.appendChild(installment);
-        header_row.appendChild(interest);
-        header_row.appendChild(principal);
-        header_row.appendChild(closing_balance);
-        */
+        payment_table.style.display = 'block';
+        
         //creating the data rows and calculating the figures in it
         var sch_beg_amount= loan_value;
         var sch_end_amount=sch_beg_amount;

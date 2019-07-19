@@ -14,20 +14,20 @@
       <form action="#" method="#" id="myForm">
         <div class="form-group">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-1">
               <label for="loan_amount">Amount</label><br>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
               <input type="text" class="form-control" id="loan_amount" placeholder="Loan Amount ($)">
             </div>
-            <div class="col-md-2">
-              <label for="interest_rate">Interest (%)</label><br>
+            <div class="col-md-1">
+              <label for="interest_rate">Interest</label><br>
             </div>
             <div class="col-md-2">
               <input class="form-control" type="text" id="interest_rate" placeholder="Interest Rate (%)">
             </div>
-            <div class="col-md-2">
-                <label for="loan_term">Loan Term</label><br>
+            <div class="col-md-1">
+                <label for="loan_term">Tenure</label><br>
             </div>
             <div class="col-md-2">
               <input type="text" class="form-control" id="loan_term" placeholder="Duration (in years)">
@@ -35,23 +35,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-1">
             <label>Frequency: </label>
           </div>
-          <div class="col-md-4">
-            <div class="form-check form-check-inline">
+          <div class="col-md-11">
+            <div class="form-check form-check-inline radio-buttons">
               <input type="radio" name="compounding" id="monthly" value="monthly">Monthly
               <label for="monthly" class="form-check-label"></label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline radio-buttons">
               <input type="radio" name="compounding" id="quarterly" value="quarterly">Quarterly
               <label for="quarterly" class="form-check-label"></label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline radio-buttons">
               <input type="radio" name="compounding" id="semianually" value="semianually">Semi-Anually
               <label for="semianually" class="form-check-label"></label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline radio-buttons">
               <input type="radio" name="compounding" id="anually" value="anually">Anually
               <label for="anually" class="form-check-label"></label>
             </div>
@@ -63,10 +63,11 @@
         </div>
       </form>
 
-      <div>
+      <div id="payment_table">
+        <h4>Loan Details</h4>
         <p id="output"></p>
-        <h1 id="loan_repayment"></h1>
-        <table class="table table-hover" id="payment_table" >
+        <h4>Loan Repayment Schedule</h4>
+        <table class="table table-hover table-sm"  >
           <thead class="thead-dark">
             <tr>
               <th>Serial</th>
