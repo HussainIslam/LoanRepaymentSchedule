@@ -47,11 +47,18 @@ document.querySelector("#calculate").addEventListener("click", function(){
         var compounding_factor = monthly_interest/(1 - (Math.pow((1+ monthly_interest), (-monthly_term))));
         var monthly_payment = loan_value * compounding_factor;
         //generating summary message
-        var output = document.querySelector("#output");
-        output.innerHTML = "Your principal amount: $" +loan_value +"<br>"
-                        +"Your interest rate: " +interest_value*100 +"%" +"<br>"
-                        +"Your tenure: " +term_value +" years" +"<br>"
-                        +"Your monthly installment: $" +monthly_payment.toFixed(2);
+        var detailAmount = document.querySelector("#detailAmount");
+        var detailRate = document.querySelector("#detailRate");
+        var detailTenure = document.querySelector("#detailTenure");
+        var detailInstallment = document.querySelector("#detailInstallment");
+        detailAmount.innerText = loan_value;
+        detailRate.innerText = interest_value * 100 + "%";
+        detailTenure.innerText = term_value +(term_value == 1 ? " year" : " years");
+        detailInstallment.innerText = "$ " +monthly_payment.toFixed(2);
+        // output.innerHTML = "Your principal amount: $" +loan_value +"<br>"
+        //                 +"Your interest rate: " +interest_value*100 +"%" +"<br>"
+        //                 +"Your tenure: " +term_value +" years" +"<br>"
+        //                 +"Your monthly installment: $" +monthly_payment.toFixed(2);
         //resetting the input boxes
         document.querySelector("#myForm").reset();
 
