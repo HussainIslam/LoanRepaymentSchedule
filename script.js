@@ -55,8 +55,12 @@ document.querySelector("#calculate").addEventListener("click", function(){
                         +"Your monthly installment: $" +monthly_payment.toFixed(2);
         //resetting the input boxes
         document.querySelector("#myForm").reset();
+
         //creating and appending table headers
         var repayment_schedule = document.querySelector("#repayment_schedule");
+        var payment_table = document.querySelector("#payment_table");
+        payment_table.style.display = 'table';
+        /*
         repayment_schedule.width = "100%";
         var header_row = document.createElement("tr");
         repayment_schedule.appendChild(header_row);
@@ -78,13 +82,13 @@ document.querySelector("#calculate").addEventListener("click", function(){
         header_row.appendChild(interest);
         header_row.appendChild(principal);
         header_row.appendChild(closing_balance);
-        
+        */
         //creating the data rows and calculating the figures in it
         var sch_beg_amount= loan_value;
         var sch_end_amount=sch_beg_amount;
         var sch_principal;
         var sch_interest;
-        console.log("Monthly term: " +monthly_term);
+        //console.log("Monthly term: " +monthly_term);
         for(var i = 0; i < monthly_term; ++i){
             //calculations of the loan repayment schedule
             sch_interest = sch_beg_amount * monthly_interest;
