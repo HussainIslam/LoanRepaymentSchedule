@@ -6,3 +6,27 @@ table, th, td {
     border: 1px solid black;
     text-align: center;
 }
+
+.btn{
+    width: 100px;
+    margin: 10px;
+}
+
+#page_heading{
+    
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+#loan_calc_body{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#button_row{
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: red; */
+}

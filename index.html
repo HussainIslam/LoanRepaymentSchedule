@@ -6,29 +6,37 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Loan Calculator</h1>
-    <div>
-      
+    <div  id="page_heading">
+      <h1>Loan Calculator</h1>
+    </div>
+    
+    <div id="loan_calc_body">
       <form action="#" method="#" id="myForm">
         <div class="form-group">
           <div class="row">
             <div class="col-md-2">
-              <label for="loan_amount">Loan Amount</label><br>
+              <label for="loan_amount">Amount</label><br>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
               <input type="text" class="form-control" id="loan_amount" placeholder="Loan Amount ($)">
             </div>
             <div class="col-md-2">
-              <label for="interest_rate">Interest Rate</label><br>
+              <label for="interest_rate">Interest (%)</label><br>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
               <input class="form-control" type="text" id="interest_rate" placeholder="Interest Rate (%)">
+            </div>
+            <div class="col-md-2">
+                <label for="loan_term">Loan Term</label><br>
+            </div>
+            <div class="col-md-2">
+              <input type="text" class="form-control" id="loan_term" placeholder="Duration (in years)">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-2">
-            <label>Compounding Frequency: </label>
+            <label>Frequency: </label>
           </div>
           <div class="col-md-4">
             <div class="form-check form-check-inline">
@@ -48,31 +56,22 @@
               <label for="anually" class="form-check-label"></label>
             </div>
           </div>
-          <div class="col-md-2">
-            <label for="loan_term">Loan Term</label><br>
-          </div>
-          <div class="col-md-2">
-            <input type="text" class="form-control" id="loan_term" placeholder="Duration (in years)">
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-2">
-            <input type="button" class="btn btn-primary" value="Calculate" id="calculate">
-            <input type="button" class="btn btn-danger" value="Clear" id="refresh">
-          </div>
+        <div class="row" id="button_row">
+            <input type="button" class="btn btn-primary float-right" value="Calculate" id="calculate">
+            <input type="button" class="btn btn-danger float-right" value="Clear" id="refresh">
         </div>
         <p id="output"></p>
         <h1 id="loan_repayment"></h1>
         <table id="repayment_schedule"></table>
 
         <label></label>
-
       </form>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 
