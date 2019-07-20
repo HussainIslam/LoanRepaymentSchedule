@@ -16,6 +16,12 @@ table, th, td {
     text-align: center;
     margin-top: 2%;
     margin-bottom: 5%;
+    display: block;
+}
+
+#page_heading *{
+    font-weight: bold;
+    font-size: 1.8em;
 }
 
 #instruction-panel{
@@ -32,6 +38,14 @@ table, th, td {
 #instructions, 
 #instructions *{
     font-size: 10px;
+}
+
+#page_head_loan{
+    color: red;
+}
+
+#page_head_calc{
+    color: blue;
 }
 
 .radio-buttons{
