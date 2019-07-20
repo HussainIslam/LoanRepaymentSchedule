@@ -21,3 +21,4 @@ Please follow these instructions to generate a loan payment schedule:
 * You can press the "Clear" button to clear the whole page and start fresh again
 
 ## Screenshot
+![application screens shot](https://github.com/HussainIslam/LoanRepaymentSchedule/blob/master/Images/Screentshot1.JPG)
