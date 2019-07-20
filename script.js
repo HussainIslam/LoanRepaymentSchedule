@@ -36,7 +36,8 @@ document.querySelector("#calculate").addEventListener("click", function(){
         break;
     }
     //generating an error message if the input is not valid
-    if(isNaN(loan_value) || isNaN(interest_value) || isNaN(term_value)){
+    if(isNaN(loan_value) || isNaN(interest_value) || isNaN(term_value) || 
+        loan_value < 0 || interest_value < 0 || term_value < 0){
         alert("Please enter valid numbers in all the fields");
         document.querySelector("#myForm").reset();
     }
